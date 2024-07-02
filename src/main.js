@@ -15,9 +15,17 @@ form.addEventListener('submit', async function (event) {
         iziToast.error({
             title: 'Error',
             message: 'Please enter a search term.',
+            position: 'topRight',
+            backgroundColor: '#EF4040',
+            messageColor: '#FFF',
+            titleColor: '#FFF',
+            iconColor: '#FFF',
+            timeout: 5000
         });
         return;
     }
+
+    searchInput.value = '';
 
     loader.textContent = 'Loading images, please wait...';
     
@@ -32,6 +40,12 @@ form.addEventListener('submit', async function (event) {
             iziToast.info({
                 title: 'Info',
                 message: 'Sorry, there are no images matching your search query. Please try again!',
+                position: 'topRight',
+                backgroundColor: '#EF4040',
+                messageColor: '#FFF',
+                titleColor: '#FFF',
+                iconColor: '#FFF',
+                timeout: 5000
             });
         } else {
             renderImages(images);
@@ -41,6 +55,12 @@ form.addEventListener('submit', async function (event) {
         iziToast.error({
             title: 'Error',
             message: 'Failed to fetch images. Please try again later.',
+            position: 'topRight',
+            backgroundColor: '#EF4040',
+            messageColor: '#FFF',
+            titleColor: '#FFF',
+            iconColor: '#FFF',
+            timeout: 5000
         });
         console.error('Error fetching images:', error);
     }
